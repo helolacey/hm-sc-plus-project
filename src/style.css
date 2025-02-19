@@ -8,6 +8,9 @@ body {
   background-color: #fffbeb;
   padding: 10px;
 }
+a {
+  color: var(--primary-color);
+}
 h3 {
   text-align: left;
   color: var(--primary-color);
