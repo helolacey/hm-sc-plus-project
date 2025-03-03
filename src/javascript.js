@@ -58,12 +58,14 @@ function displayTemp(response) {
   let conditionElement = document.querySelector("#condition");
   let humidityElement = document.querySelector("#humidity");
   let windspeedElement = document.querySelector("#wind-speed");
+  let iconImage = document.querySelector("#icon");
 
   tempElement.innerHTML = currentTemp;
   cityElement.innerHTML = response.data.city;
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windspeedElement.innerHTML = `${Math.round(response.data.wind.speed)}mph`;
+  iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`
 }
 
 function search(event) {
