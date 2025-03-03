@@ -78,7 +78,5 @@ function search(event) {
   let unit = "metric";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&unit=${unit}`;
 
-  console.log(apiURL);
-
   axios.get(apiURL).then(displayTemp);
 }
