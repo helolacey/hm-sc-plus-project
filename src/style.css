@@ -43,22 +43,6 @@ footer {
 .c-size {
   font-size: 30px;
 }
-.conditions {
-  font-size: 14px;
-  color: var(--primary-color);
-  text-transform: capitalize;
-}
-.weekday {
-  border-radius: 10px;
-  transition: all 0.2s ease-in-out;
-  z-index: 1;
-  padding: 10px;
-  align-items: center;
-  border: 1px solid #dfdfdf;
-}
-.weekday:hover {
-  transform: scale(1.1);
-}
 .card-body {
   padding: 10px;
   align-items: center;
@@ -76,6 +60,11 @@ footer {
   font-size: 1.25rem;
   text-align: center;
 }
+.conditions {
+  font-size: 14px;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
 .container {
   background-color: #fff;
   margin-top: 30px;
@@ -83,8 +72,8 @@ footer {
   border-radius: 20px;
   max-width: 1200px;
 }
-.current-day {
-  text-align: left;
+.current-temp {
+  font-size: 75px;
 }
 .high-temp {
   font-weight: bold;
@@ -92,9 +81,6 @@ footer {
 .row {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-.temp {
-  font-size: 75px;
 }
 .temperature-toggle {
   border: 1px solid var(--primary-color) !important;
@@ -109,4 +95,14 @@ footer {
 .time {
   font-size: 20px;
   padding-bottom: 10px;
+}
+.weekday {
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  padding: 10px;
+  align-items: center;
+  border: 1px solid #dfdfdf;
+}
+.weekday:hover {
+  transform: scale(1.1);
 }
