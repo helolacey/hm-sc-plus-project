@@ -43,6 +43,11 @@ footer {
 .c-size {
   font-size: 30px;
 }
+.conditions {
+  font-size: 14px;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
 .weekday {
   border-radius: 10px;
   transition: all 0.2s ease-in-out;

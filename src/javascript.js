@@ -49,14 +49,21 @@ let form = document.querySelector("#city-search");
 
 form.addEventListener("submit", search);
 
-// Search bar changes city name
+// Changes for all elements
 
 function displayTemp(response) {
   let tempElement = document.querySelector("#current-temp");
   let currentTemp = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#city-name");
-  cityElement.innerHTML = response.data.city;
+  let conditionElement = document.querySelector("#condition");
+  let humidityElement = document.querySelector("#humidity");
+  let windspeedElement = document.querySelector("#wind-speed");
+
   tempElement.innerHTML = currentTemp;
+  cityElement.innerHTML = response.data.city;
+  conditionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windspeedElement.innerHTML = `${Math.round(response.data.wind.speed)}mph`;
 }
 
 function search(event) {

@@ -91,29 +91,27 @@
       </div>
       <div class="row justify-content-center align-items-center">
         <div class="col-10 text-start">
-          <h1 class="city pt-3" id="city-name">London</h1>
+          <h1 class="city pt-3" id="city-name"></h1>
         </div>
       </div>
       <div class="row justify-content-center align-items-center">
         <div class="col-6 current-day text-start">
           <h4 class="date" id="current-date">Tuesday 28th January 2025</h4>
           <div class="time" id="current-time">15:21:00</div>
-          <div class="wind-humidity">Wind: 5mph<br />Humidity: 25%</div>
+          <div class="wind-humidity">
+            Wind: <span id="wind-speed"></span><br />Humidity:
+            <span id="humidity"></span>
+          </div>
         </div>
         <div class="col-4 text-end">
           <div class="temp">
-            <span class="current-temp" id="current-temp"> 10</span
+            <span class="current-temp" id="current-temp"></span
             ><span class="c-size"
               ><sup><sup>o</sup>c</sup></span
             >
           </div>
           <div>
-            <span class="high-temp">
-              12<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i>
-            </span>
-            <span class="low-temp">
-              5<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i>
-            </span>
+            <div class="conditions" id="condition"></div>
           </div>
         </div>
       </div>
