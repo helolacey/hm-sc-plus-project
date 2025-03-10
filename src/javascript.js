@@ -66,6 +66,8 @@ function displayTemp(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windspeedElement.innerHTML = `${Math.round(response.data.wind.speed)}mph`;
   iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function search(event) {
@@ -83,33 +85,32 @@ function search(event) {
 
 // Changes for weekly forecast
 
-function displayForecast() {
-  let days = ["Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+function displayForecast(response) {
   let forecastHtml = "";
 
-days.forEach(function(day) {
-  forecastHtml = 
+response.data.daily.forEach(function(day) {
+  if (index < 5) {
+    forecastHtml = 
   forecastHtml + `
             <div class="col-2">
               <div class="weekday shadow-sm">
-                <h5 class="card-title">${day}</h5>
+                <h5 class="card-title">${formatDay(day.time)}</h5>
                 <img
-                  src="images/sun.svg"
-                  alt
-                  text="sunny"
+                  src="${day.condition.icon_url}"
                   class="card-image img-fluid"
                 />
                 <div class="card-text">
-                  <span class="high-temp"
-                    >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                  ></span>
+                  <span class="high-temp">
+                    ${Math.round(day.temperature.maximum)}<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i>
+                  </span>
                   <span class="low-temp">
-                    10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
+                    ${Math.round(day.temperature.minimum)}<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
                   ></span>
                 </div>
               </div>
             </div>`;
-});
+            }
+            });
 
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
@@ -117,4 +118,17 @@ forecastElement.innerHTML = forecastHtml;
 
 displayForecast();
 
+function getForecast(city) {
+  let apiKey = "702c489eb400ba895fo40tbf5ac5a039";
+  let unit = "metric";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${searchInput.value}&key=${apiKey}&unit=${unit}`;
 
+  axios(apiURL).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
