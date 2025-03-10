@@ -49,7 +49,7 @@ let form = document.querySelector("#city-search");
 
 form.addEventListener("submit", search);
 
-// Changes for all elements
+// Changes for all current day elements
 
 function displayTemp(response) {
   let tempElement = document.querySelector("#current-temp");
@@ -65,7 +65,7 @@ function displayTemp(response) {
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windspeedElement.innerHTML = `${Math.round(response.data.wind.speed)}mph`;
-  iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`
+  iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
 }
 
 function search(event) {
@@ -80,3 +80,41 @@ function search(event) {
 
   axios.get(apiURL).then(displayTemp);
 }
+
+// Changes for weekly forecast
+
+function displayForecast() {
+  let days = ["Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+  let forecastHtml = "";
+
+days.forEach(function(day) {
+  forecastHtml = 
+  forecastHtml + `
+            <div class="col-2">
+              <div class="weekday shadow-sm">
+                <h5 class="card-title">${day}</h5>
+                <img
+                  src="images/sun.svg"
+                  alt
+                  text="sunny"
+                  class="card-image img-fluid"
+                />
+                <div class="card-text">
+                  <span class="high-temp"
+                    >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
+                  ></span>
+                  <span class="low-temp">
+                    10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
+                  ></span>
+                </div>
+              </div>
+            </div>`;
+});
+
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
+
+

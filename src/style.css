@@ -76,6 +76,10 @@ footer {
   font-size: 75px;
   line-height: 75px;
 }
+#forecast {
+  display: flex;
+  justify-content: center;
+}
 .high-temp {
   font-weight: bold;
 }
@@ -102,11 +106,12 @@ footer {
   line-height: 75px;
 }
 .weekday {
+  background-color: #fff;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
   padding: 10px;
-  align-items: center;
   border: 1px solid #dfdfdf;
+  margin: 10px;
 }
 .weekday:hover {
   transform: scale(1.1);

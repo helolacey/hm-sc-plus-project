@@ -104,11 +104,13 @@
           </div>
         </div>
         <div class="col-4 text-end">
-          <span id="icon"></span>
-          <span class="current-temp" id="current-temp"></span>
-          <span class="c-size">
-            <sup><sup>o</sup>c</sup>
-          </span>
+          <div class="d-flex justify-content-end">
+            <span id="icon"></span>
+            <span class="current-temp" id="current-temp"></span>
+            <span class="c-size">
+              <sup><sup>o</sup>c</sup>
+            </span>
+          </div>
           <div>
             <div class="conditions" id="condition"></div>
           </div>
@@ -119,104 +121,7 @@
           <h3>Five-day Forecast</h3>
           <hr />
         </div>
-        <div class="row justify-content-center align-items-center">
-          <div class="col-2">
-            <div class="weekday shadow-sm">
-              <h5 class="card-title">Saturday</h5>
-              <img
-                src="images/sun.svg"
-                alt
-                text="sunny"
-                class="card-image img-fluid"
-              />
-
-              <div class="card-text">
-                <span class="high-temp"
-                  >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                ></span>
-                <span class="low-temp">
-                  10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="weekday shadow-sm">
-              <h5 class="card-title">Sunday</h5>
-              <img
-                src="images/sun-cloud.svg"
-                alt
-                text="sun-clouds"
-                class="card-image img-fluid"
-              />
-              <div class="card-text">
-                <span class="high-temp"
-                  >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                ></span>
-                <span class="low-temp">
-                  10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="weekday shadow-sm">
-              <h5 class="card-title">Monday</h5>
-              <img
-                src="images/sun-rain.svg"
-                alt
-                text="sun-rain"
-                class="card-image img-fluid"
-              />
-              <div class="card-text">
-                <span class="high-temp"
-                  >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                ></span>
-                <span class="low-temp">
-                  10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="weekday shadow-sm">
-              <h5 class="card-title">Tuesday</h5>
-              <img
-                src="images/sun.svg"
-                alt
-                text="sunny"
-                class="img img-fluid card-image"
-              />
-              <div class="card-text">
-                <span class="high-temp"
-                  >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                ></span>
-                <span class="low-temp">
-                  10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="weekday shadow-sm">
-              <h5 class="card-title">Wednesday</h5>
-              <img
-                src="images/thunder.svg"
-                alt
-                text="thunder"
-                class="card-image img-fluid"
-              />
-              <div class="card-text">
-                <span class="high-temp"
-                  >15<sup>o</sup>c <i class="bi bi-arrow-up arrow-up"></i
-                ></span>
-                <span class="low-temp">
-                  10<sup>o</sup>c <i class="bi bi-arrow-down arrow-down"></i
-                ></span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="forecast"></div>
       </div>
       <footer>
         <p>
