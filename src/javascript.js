@@ -88,10 +88,10 @@ function search(event) {
 function displayForecast(response) {
   let forecastHtml = "";
 
-response.data.daily.forEach(function(day) {
-  if (index < 5) {
-    forecastHtml = 
-  forecastHtml + `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml + `
             <div class="col-2">
               <div class="weekday shadow-sm">
                 <h5 class="card-title">${formatDay(day.time)}</h5>
@@ -109,19 +109,17 @@ response.data.daily.forEach(function(day) {
                 </div>
               </div>
             </div>`;
-            }
-            });
+    }
+  });
 
-let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = forecastHtml;
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
-
-displayForecast();
 
 function getForecast(city) {
   let apiKey = "702c489eb400ba895fo40tbf5ac5a039";
   let unit = "metric";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${searchInput.value}&key=${apiKey}&unit=${unit}`;
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=${unit}`;
 
   axios(apiURL).then(displayForecast);
 }
