@@ -87,16 +87,6 @@ footer {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.temperature-toggle {
-  border: 1px solid var(--primary-color) !important;
-  color: #dfdfdf;
-  background-color: #b5b5b5;
-}
-.temperature-toggle:hover {
-  border: 1px solid var(--primary-color) !important;
-  color: var(--primary-color) !important;
-  background-color: #f1b963;
-}
 .time {
   font-size: 20px;
   padding-bottom: 10px;
