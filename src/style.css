@@ -112,6 +112,7 @@ footer {
   padding: 10px;
   border: 1px solid #dfdfdf;
   margin: 10px;
+  text-align: center;
 }
 .weekday:hover {
   transform: scale(1.1);
